@@ -45,11 +45,11 @@ span[id*=p-]{
 
 .color-path{
     border: 2px solid #7c8bc4;
-    background-color: yellow;
+    background-color: yellow !important;
 }
 
 .kill-cell-color{
-    background-color: red;
+    background-color: red !important;
 }
 
 #message-div{
