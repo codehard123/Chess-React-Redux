@@ -18,6 +18,7 @@ import Knight from "./pieces/knight"
 import Queen from "./pieces/queen"
 import { unsetMoveBoxesA } from "./actions/movableBoxes"
 import { fclickDone } from "./reducers/clickReducers"
+import { checkCoordinate } from "./actions/checkCoordinate"
 function App({moveableBoxesMapper,boardMapper,firstClickDoneMapper,turnMapper,asynAction,setTurn,captureBoxesMapper,setCaptureBoxes,setBOARD,setFirstClickDone,setSelectedPiece,setSecondClickDone,setSelectedPieceCoords,setMovableBoxes,selectedPieceCoordsMapper}){
 const {firstClickDone}=firstClickDoneMapper
 const {moveableBoxes,captureBoxes}=moveableBoxesMapper
@@ -113,11 +114,17 @@ for(let rowIndex=0;rowIndex<8;rowIndex++)
              const cellId = `cell-${isWhite}-${rowNumber}${cellLetter}`;
              let isAqua=false
              let isRed=false
-        console.log("Updated",moveableBoxes)
+             let isMaroon=false
+        
       for(let i=0;i<moveableBoxes.length;i++)
  {
   console.log(rowIndex , moveableBoxes)
   console.log(colIndex,moveableBoxes)
+    if(rowIndex==checkCoordinate[0] && colIndex==checkCoordinate[1])
+    {
+        isMaroon=true 
+    }
+    else isMaroon=false
     if(rowIndex==moveableBoxes[i][0] && colIndex==moveableBoxes[i][1])
    {
     
@@ -143,7 +150,7 @@ for(let rowIndex=0;rowIndex<8;rowIndex++)
       p2.push(<div
                  onClick={(e)=>selectPiece(e,[rowIndex,colIndex],turn)}
                 id={cellId}
-               className={`col-md-1 cell`} key={`${count++}`} style={{backgroundColor:isAqua?"aqua":isRed?"red":""}}>
+               className={`col-md-1 cell`} key={`${count++}`} style={{backgroundColor:isAqua?"aqua":isRed?"red":isMaroon?"maroon":"" }}>
                  {renderPiece(board[rowIndex][colIndex])}            
                              </div>)
       }

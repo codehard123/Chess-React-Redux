@@ -1,7 +1,7 @@
 
 export const initialState={
     turn:'white',
-
+    checkCoordinate:[],
     captureBoxes:[],
     moveableBoxes:[],
     firstClickDone:false,

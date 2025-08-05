@@ -7,7 +7,7 @@ import {selectPieceReducer} from "./reducers/selectPieceReducer"
 import {setPieceCoordsReducer} from "./reducers/setPieceCoordsReducer"
 import {combineReducers} from "redux"
 import {moveableBoxesReducer} from "./reducers/movableBoxesReducer"
-import {thunk} from "redux-thunk"
+
 
 const rootReducer=combineReducers({
 pawnReducer,

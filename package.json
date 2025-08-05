@@ -2,6 +2,17 @@
   "name": "chess",
   "version": "0.1.0",
   "private": true,
+  "build": {
+    "appId": "com.chess.app",
+    "productName": "Chess",
+    "outputDir": "build",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ]
+    
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
